@@ -1,2 +1,2 @@
-# adopt-me
-React JS project inspired to frontend master course complete intro to react V5
+# Adopt me
+This is a sample application written using React JS. I wrote this project while following along the *Complet intro to React V5* course available on [frontend masters](https://frontendmasters.com/courses/complete-react-v5/)
