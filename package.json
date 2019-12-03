@@ -1,0 +1,24 @@
+{
+  "name": "adopt-me",
+  "version": "1.0.0",
+  "description": "This is a sample application written using React JS. I wrote this project while following along the *Complete intro to React V5* course available on [frontend masters](https://frontendmasters.com/courses/complete-react-v5/)",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "prettier": "^1.19.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EnricoMassoneDeltatre/adopt-me.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EnricoMassoneDeltatre/adopt-me/issues"
+  },
+  "homepage": "https://github.com/EnricoMassoneDeltatre/adopt-me#readme"
+}
