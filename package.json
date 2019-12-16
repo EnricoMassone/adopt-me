@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "@frontendmasters/pet": "^1.0.3",
+    "cross-env": "^6.0.3",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
   },
@@ -23,7 +24,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "prettier \"src/**/*.{js,html}\" --write",
     "lint": "eslint \"src/**/*.{js,jsx}\" --quiet",
-    "dev": "parcel src/index.html"
+    "dev": "parcel src/index.html",
+    "dev:mock": "cross-env PET_MOCK=mock parcel src/index.html"
   },
   "repository": {
     "type": "git",
