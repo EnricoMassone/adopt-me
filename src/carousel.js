@@ -13,6 +13,13 @@ class Carousel extends React.Component {
     return { photos };
   }
 
+  selectPhoto = event => {
+    const index = +event.target.dataset.index;
+    this.setState({
+      active: index
+    });
+  };
+
   render() {
     const { photos, active } = this.state;
 
@@ -22,12 +29,14 @@ class Carousel extends React.Component {
         <div className="carousel-smaller">
           {photos.map((photo, index) => {
             return (
+              // eslint-disable-next-line
               <img
                 key={photo}
                 src={photo}
                 alt="animal thumbnail"
                 data-index={index}
                 className={index === active ? "active" : ""}
+                onClick={this.selectPhoto}
               />
             );
           })}
