@@ -1,11 +1,6 @@
 import React from "react";
+import per from "@frontendmasters/pet";
 
-const Details = props => {
-  return (
-    <pre>
-      <code>{JSON.stringify(props, null, 4)}</code>
-    </pre>
-  );
-};
+class Details extends React.Component {}
 
 export default Details;

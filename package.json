@@ -4,6 +4,9 @@
   "description": "This is a sample application written using React JS. I wrote this project while following along the *Complete intro to React V5* course available on [frontend masters](https://frontendmasters.com/courses/complete-react-v5/)",
   "main": "index.js",
   "dependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.7.4",
+    "@babel/preset-env": "^7.7.7",
+    "@babel/preset-react": "^7.7.4",
     "@frontendmasters/pet": "^1.0.3",
     "@reach/router": "^1.2.1",
     "react": "^16.12.0",
