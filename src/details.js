@@ -1,5 +1,6 @@
 import React from "react";
 import pet from "@frontendmasters/pet";
+import Carousel from "./carousel";
 
 class Details extends React.Component {
   state = { loading: true };
@@ -23,14 +24,17 @@ class Details extends React.Component {
       return <h1>Loading...</h1>;
     }
 
-    const { name, description, breed, animal, location } = this.state;
+    const { name, description, breed, animal, location, media } = this.state;
 
     return (
       <div className="details">
-        <h1>{name}</h1>
-        <h2>{`${animal} - ${breed} - ${location}`}</h2>
-        <button>Adopt {name}</button>
-        <p>{description}</p>
+        <Carousel media={media} />
+        <div>
+          <h1>{name}</h1>
+          <h2>{`${animal} - ${breed} - ${location}`}</h2>
+          <button>Adopt {name}</button>
+          <p>{description}</p>
+        </div>
       </div>
     );
   }
