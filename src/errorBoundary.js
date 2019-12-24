@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import { Link, Redirect } from "@reach/router";
+import { Link, navigate } from "@reach/router";
 
 class ErrorBoundary extends Component {
-  state = { hasError: false, redirect: false };
+  state = { hasError: false };
   timer = null;
 
   static getDerivedStateFromError() {
@@ -18,9 +18,8 @@ class ErrorBoundary extends Component {
   }
 
   componentDidUpdate() {
-    if (this.state.hasError && !this.state.redirect) {
-      console.log("updated the redirect state...");
-      this.timer = setTimeout(() => this.setState({ redirect: true }), 5000);
+    if (this.state.hasError) {
+      this.timer = setTimeout(() => navigate("/"), 5000);
     }
   }
 
