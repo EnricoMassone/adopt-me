@@ -10,7 +10,7 @@ class ErrorBoundary extends Component {
 
   componentDidCatch(error, errorInfo) {
     console.error(
-      "An error has occurred and has been handled",
+      "An error has occurred and has been handled.",
       error,
       errorInfo
     );
