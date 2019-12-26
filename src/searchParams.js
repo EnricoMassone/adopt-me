@@ -62,6 +62,20 @@ const SearchParams = () => {
 
         <BreedDropdown />
 
+        <label htmlFor="theme">
+          Theme
+          <select
+            id="theme"
+            value={theme}
+            onBlur={e => setTheme(e.target.value)}
+            onChange={e => setTheme(e.target.value)}
+          >
+            <option value="peru">Peru</option>
+            <option value="pink">Pink</option>
+            <option value="darkblue">Dark Blue</option>
+          </select>
+        </label>
+
         <button style={{ backgroundColor: theme }}>Search</button>
       </form>
 
