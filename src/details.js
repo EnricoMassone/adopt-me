@@ -3,13 +3,16 @@ import pet from "@frontendmasters/pet";
 import Carousel from "./carousel";
 import ErrorBoundary from "./errorBoundary";
 import ThemeContext from "./themeContext";
+import Modal from "./modal";
+import { navigate } from "@reach/router";
 
 class Details extends React.Component {
-  state = { loading: true };
+  state = { loading: true, showModal: false };
 
   componentDidMount() {
     pet.animal(this.props.id).then(({ animal }) => {
       this.setState({
+        url: animal.url,
         name: animal.name,
         description: animal.description,
         breed: animal.breeds.primary,
@@ -21,12 +24,24 @@ class Details extends React.Component {
     }, console.error);
   }
 
+  openModal = () => this.setState({ showModal: true });
+  closeModal = () => this.setState({ showModal: false });
+  adoptPet = () => navigate(this.state.url);
+
   render() {
     if (this.state.loading) {
       return <h1>Loading...</h1>;
     }
 
-    const { name, description, breed, animal, location, media } = this.state;
+    const {
+      name,
+      description,
+      breed,
+      animal,
+      location,
+      media,
+      showModal
+    } = this.state;
 
     return (
       <div className="details">
@@ -37,9 +52,26 @@ class Details extends React.Component {
 
           <ThemeContext.Consumer>
             {([theme]) => (
-              <button style={{ backgroundColor: theme }}>Adopt {name}</button>
+              <button
+                style={{ backgroundColor: theme }}
+                onClick={this.openModal}
+              >
+                Adopt {name}
+              </button>
             )}
           </ThemeContext.Consumer>
+
+          {showModal ? (
+            <Modal>
+              <div>
+                <h1>Would you like to adopt {name}?</h1>
+                <div className="buttons">
+                  <button onClick={this.adoptPet}>Yes</button>
+                  <button onClick={this.closeModal}>No</button>
+                </div>
+              </div>
+            </Modal>
+          ) : null}
 
           <p>{description}</p>
         </div>
